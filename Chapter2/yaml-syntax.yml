@@ -1,0 +1,16 @@
+# Key value pairs
+name: FooBar
+age: 30
+job: developer
+
+# Lists
+fruits:
+  - apple
+  - banana
+  - cherry
+
+# Nested elements
+address:
+  street: 123 Downing Street
+  city: London
+  country: United Kingdom
