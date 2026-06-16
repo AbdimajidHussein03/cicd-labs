@@ -1,6 +1,7 @@
 name: Manual Python Test Workflow
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       python-version:
@@ -24,7 +25,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ github.event.inputs.python-version }}
+          python-version: ${{ github.event.inputs.python-version || '3.9' }}
 
       - name: Install dependencies
         run: |
@@ -41,4 +42,4 @@ jobs:
 
       - name: Notify success
         if: success()
-        run: echo "Tests passed on Python ${{ github.event.inputs.python-version }}"
+        run: echo "Tests passed on Python ${{ github.event.inputs.python-version || '3.9' }}"
