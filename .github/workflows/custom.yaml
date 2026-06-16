@@ -1,0 +1,16 @@
+name: Call Custom Action CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Hello world custom action
+        uses: AbdimajidHussein03/Abdimajid-Custom@main
+        with:
+          who-to-greet: "CoderCo team"
